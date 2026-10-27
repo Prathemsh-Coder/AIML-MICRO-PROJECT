@@ -1,0 +1,3 @@
+"""
+SmartSegment core package initialization.
+"""
