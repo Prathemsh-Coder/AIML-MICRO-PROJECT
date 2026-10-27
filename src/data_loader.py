@@ -5,14 +5,17 @@ Supports preloaded Mall Customers, Online Retail RFM, and user-uploaded datasets
 
 import pandas as pd
 import numpy as np
+from pathlib import Path
 from typing import Tuple, Dict, Any, List
+
+DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
 def load_preloaded_dataset(dataset_name: str) -> pd.DataFrame:
     """Loads a pre-bundled dataset by name."""
     if dataset_name == "Mall Customers":
-        return pd.read_csv("data/mall_customers.csv")
+        return pd.read_csv(DATA_DIR / "mall_customers.csv")
     elif dataset_name == "Online Retail (RFM)":
-        return pd.read_csv("data/online_retail_rfm.csv")
+        return pd.read_csv(DATA_DIR / "online_retail_rfm.csv")
     else:
         raise ValueError(f"Unknown preloaded dataset: {dataset_name}")
 
